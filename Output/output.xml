@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.5 on win32)" generated="20220704 02:19:36.451" rpa="false" schemaversion="3">
+<suite id="s1" name="AddUsers" source="C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\Tests\AddUsers.robot">
+<test id="s1-t1" name="Open" line="10">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>automationName=UiAutomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220704 02:19:40.249" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='emulator-5554' | automationName='UiAutomator2' ]</msg>
+<msg timestamp="20220704 02:19:42.289" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "emulator-5554", "appium:automationName": "UiAutomator2"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "emulator-5554", "automationName": "UiAutomator2"}}</msg>
+<msg timestamp="20220704 02:19:42.327" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220704 02:20:42.484" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 751</msg>
+<msg timestamp="20220704 02:20:42.485" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:42.491" level="DEBUG">Opened application with session id 2f7e09af-5888-46a6-ac2c-60c7815c5685</msg>
+<msg timestamp="20220704 02:20:42.492" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20220704 02:19:40.248" endtime="20220704 02:20:42.492"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>id=com.google.android.apps.nexuslauncher:id/scrim_view</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220704 02:20:42.494" level="TRACE">Arguments: [ 'id=com.google.android.apps.nexuslauncher:id/scrim_view' ]</msg>
+<msg timestamp="20220704 02:20:42.495" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "id", "value": "com.google.android.apps.nexuslauncher:id/scrim_view"}</msg>
+<msg timestamp="20220704 02:20:42.807" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:42.808" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:42.808" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:42.493" endtime="20220704 02:20:42.808"/>
+</kw>
+<status status="PASS" starttime="20220704 02:19:40.246" endtime="20220704 02:20:42.809"/>
+</test>
+<test id="s1-t2" name="Swipe Up" line="14">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>id=com.google.android.apps.nexuslauncher:id/scrim_view</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220704 02:20:42.814" level="TRACE">Arguments: [ 'id=com.google.android.apps.nexuslauncher:id/scrim_view' ]</msg>
+<msg timestamp="20220704 02:20:42.815" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "id", "value": "com.google.android.apps.nexuslauncher:id/scrim_view"}</msg>
+<msg timestamp="20220704 02:20:42.932" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:42.933" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:42.934" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/825df6a3-587c-437a-951d-1476d41738ef/size {"id": "825df6a3-587c-437a-951d-1476d41738ef"}</msg>
+<msg timestamp="20220704 02:20:43.005" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/825df6a3-587c-437a-951d-1476d41738ef/size HTTP/1.1" 200 89</msg>
+<msg timestamp="20220704 02:20:43.005" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:43.009" level="INFO">Element 'id=com.google.android.apps.nexuslauncher:id/scrim_view' size: {'height': 2208, 'width': 1080} </msg>
+<msg timestamp="20220704 02:20:43.009" level="TRACE">Return: {'height': 2208, 'width': 1080}</msg>
+<msg timestamp="20220704 02:20:43.010" level="INFO">${element_size} = {'height': 2208, 'width': 1080}</msg>
+<status status="PASS" starttime="20220704 02:20:42.814" endtime="20220704 02:20:43.010"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>id=com.google.android.apps.nexuslauncher:id/scrim_view</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220704 02:20:43.012" level="TRACE">Arguments: [ 'id=com.google.android.apps.nexuslauncher:id/scrim_view' ]</msg>
+<msg timestamp="20220704 02:20:43.012" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "id", "value": "com.google.android.apps.nexuslauncher:id/scrim_view"}</msg>
+<msg timestamp="20220704 02:20:43.117" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:43.118" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:43.118" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/2b4085b6-8d17-43cb-ac3b-bab9bca9f4f6/location {"id": "2b4085b6-8d17-43cb-ac3b-bab9bca9f4f6"}</msg>
+<msg timestamp="20220704 02:20:43.164" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/2b4085b6-8d17-43cb-ac3b-bab9bca9f4f6/location HTTP/1.1" 200 74</msg>
+<msg timestamp="20220704 02:20:43.165" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:43.169" level="INFO">Element 'id=com.google.android.apps.nexuslauncher:id/scrim_view' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20220704 02:20:43.169" level="TRACE">Return: {'x': 0, 'y': 0}</msg>
+<msg timestamp="20220704 02:20:43.170" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20220704 02:20:43.011" endtime="20220704 02:20:43.170"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220704 02:20:43.174" level="TRACE">Arguments: [ '0 + (1080 * 0.5)' ]</msg>
+<msg timestamp="20220704 02:20:43.175" level="TRACE">Return: 540.0</msg>
+<msg timestamp="20220704 02:20:43.175" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220704 02:20:43.171" endtime="20220704 02:20:43.175"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220704 02:20:43.178" level="TRACE">Arguments: [ '0 + (2208 * 0.7)' ]</msg>
+<msg timestamp="20220704 02:20:43.179" level="TRACE">Return: 1545.6</msg>
+<msg timestamp="20220704 02:20:43.179" level="INFO">${start_y} = 1545.6</msg>
+<status status="PASS" starttime="20220704 02:20:43.176" endtime="20220704 02:20:43.179"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220704 02:20:43.183" level="TRACE">Arguments: [ '0 + (1080 * 0.5)' ]</msg>
+<msg timestamp="20220704 02:20:43.183" level="TRACE">Return: 540.0</msg>
+<msg timestamp="20220704 02:20:43.184" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220704 02:20:43.180" endtime="20220704 02:20:43.184"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220704 02:20:43.189" level="TRACE">Arguments: [ '0 + (2208 * 0.3)' ]</msg>
+<msg timestamp="20220704 02:20:43.189" level="TRACE">Return: 662.4</msg>
+<msg timestamp="20220704 02:20:43.190" level="INFO">${end_y} = 662.4</msg>
+<status status="PASS" starttime="20220704 02:20:43.185" endtime="20220704 02:20:43.190"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<msg timestamp="20220704 02:20:43.192" level="TRACE">Arguments: [ 540.0 | 1545.6 | 540.0 | 662.4 | 500 ]</msg>
+<msg timestamp="20220704 02:20:43.193" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/touch/perform {"actions": [{"action": "press", "options": {"x": 540, "y": 1545}}, {"action": "wait", "options": {"ms": 500}}, {"action": "moveTo", "options": {"x": 540, "y": 662}}, {"action": "release", "options": {}}]}</msg>
+<msg timestamp="20220704 02:20:46.044" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/touch/perform HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:46.045" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:46.045" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:43.191" endtime="20220704 02:20:46.046"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220704 02:20:46.047" level="TRACE">Arguments: [ '1' ]</msg>
+<msg timestamp="20220704 02:20:47.050" level="INFO">Slept 1 second</msg>
+<msg timestamp="20220704 02:20:47.050" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:46.047" endtime="20220704 02:20:47.050"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:42.812" endtime="20220704 02:20:47.052"/>
+</test>
+<test id="s1-t3" name="Enable App Page" line="24">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.google.android.apps.nexuslauncher:id/icon</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220704 02:20:47.057" level="TRACE">Arguments: [ 'id=com.google.android.apps.nexuslauncher:id/icon' ]</msg>
+<msg timestamp="20220704 02:20:47.063" level="INFO">Clicking element 'id=com.google.android.apps.nexuslauncher:id/icon'.</msg>
+<msg timestamp="20220704 02:20:47.064" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "id", "value": "com.google.android.apps.nexuslauncher:id/icon"}</msg>
+<msg timestamp="20220704 02:20:47.328" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 2315</msg>
+<msg timestamp="20220704 02:20:47.329" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:47.330" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/ba2ae969-2853-48fd-a758-48a18e0f10d8/click {"id": "ba2ae969-2853-48fd-a758-48a18e0f10d8"}</msg>
+<msg timestamp="20220704 02:20:47.493" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/ba2ae969-2853-48fd-a758-48a18e0f10d8/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:47.496" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:47.497" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:47.057" endtime="20220704 02:20:47.497"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>//android.view.View[@content-desc="Home"]</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220704 02:20:47.510" level="TRACE">Arguments: [ '//android.view.View[@content-desc="Home"]' ]</msg>
+<msg timestamp="20220704 02:20:47.511" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.view.View[@content-desc=\"Home\"]"}</msg>
+<msg timestamp="20220704 02:20:49.322" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220704 02:20:49.322" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:49.525" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.view.View[@content-desc=\"Home\"]"}</msg>
+<msg timestamp="20220704 02:20:50.264" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220704 02:20:50.266" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:50.468" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.view.View[@content-desc=\"Home\"]"}</msg>
+<msg timestamp="20220704 02:20:50.965" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:50.966" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:50.967" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:47.510" endtime="20220704 02:20:50.967"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:47.054" endtime="20220704 02:20:50.968"/>
+</test>
+<test id="s1-t4" name="Click on Contact Feature" line="28">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="Contacts"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220704 02:20:50.972" level="TRACE">Arguments: [ '//android.widget.TextView[@text="Contacts"]' ]</msg>
+<msg timestamp="20220704 02:20:50.976" level="INFO">Clicking element '//android.widget.TextView[@text="Contacts"]'.</msg>
+<msg timestamp="20220704 02:20:50.977" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.TextView[@text=\"Contacts\"]"}</msg>
+<msg timestamp="20220704 02:20:51.204" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:51.205" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:51.206" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/3d881f80-6ac6-4216-84c1-57ebe153c307/click {"id": "3d881f80-6ac6-4216-84c1-57ebe153c307"}</msg>
+<msg timestamp="20220704 02:20:51.397" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/3d881f80-6ac6-4216-84c1-57ebe153c307/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:51.398" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:51.399" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:50.972" endtime="20220704 02:20:51.399"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:50.970" endtime="20220704 02:20:51.400"/>
+</test>
+<test id="s1-t5" name="Click On Add Button" line="31">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="Create new contact"]</arg>
+<arg>6s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220704 02:20:51.408" level="TRACE">Arguments: [ '//android.widget.ImageButton[@content-desc="Create new contact"]' | '6s' ]</msg>
+<msg timestamp="20220704 02:20:51.410" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.ImageButton[@content-desc=\"Create new contact\"]"}</msg>
+<msg timestamp="20220704 02:20:52.676" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220704 02:20:52.678" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:52.880" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.ImageButton[@content-desc=\"Create new contact\"]"}</msg>
+<msg timestamp="20220704 02:20:53.728" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:53.729" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:53.730" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/f933d3d9-0d5a-427d-865e-a8efefc04688/displayed {"id": "f933d3d9-0d5a-427d-865e-a8efefc04688"}</msg>
+<msg timestamp="20220704 02:20:53.778" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/f933d3d9-0d5a-427d-865e-a8efefc04688/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:53.779" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:53.780" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:51.408" endtime="20220704 02:20:53.780"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.ImageButton[@content-desc="Create new contact"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220704 02:20:53.781" level="TRACE">Arguments: [ '//android.widget.ImageButton[@content-desc="Create new contact"]' ]</msg>
+<msg timestamp="20220704 02:20:53.787" level="INFO">Clicking element '//android.widget.ImageButton[@content-desc="Create new contact"]'.</msg>
+<msg timestamp="20220704 02:20:53.788" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.ImageButton[@content-desc=\"Create new contact\"]"}</msg>
+<msg timestamp="20220704 02:20:54.072" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:54.073" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:54.074" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/d5f66dcb-67aa-470b-9ca4-21482d6d660d/click {"id": "d5f66dcb-67aa-470b-9ca4-21482d6d660d"}</msg>
+<msg timestamp="20220704 02:20:54.296" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/d5f66dcb-67aa-470b-9ca4-21482d6d660d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:54.297" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:54.297" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:53.781" endtime="20220704 02:20:54.297"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:51.406" endtime="20220704 02:20:54.356"/>
+</test>
+<test id="s1-t6" name="Enter New Contact First Name" line="36">
+<kw name="First Name" library="FakerLibrary">
+<var>${firstname}</var>
+<msg timestamp="20220704 02:20:54.552" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220704 02:20:54.553" level="TRACE">Return: 'Leslie'</msg>
+<msg timestamp="20220704 02:20:54.555" level="INFO">${firstname} = Leslie</msg>
+<status status="PASS" starttime="20220704 02:20:54.551" endtime="20220704 02:20:54.555"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220704 02:20:54.776" level="TRACE">Arguments: [ 'Leslie' ]</msg>
+<msg timestamp="20220704 02:20:54.777" level="INFO">Leslie</msg>
+<msg timestamp="20220704 02:20:54.777" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:54.775" endtime="20220704 02:20:54.777"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220704 02:20:54.796" level="TRACE">Arguments: [ '${firstname}' ]</msg>
+<msg timestamp="20220704 02:20:54.799" level="INFO">${firstname} = Leslie</msg>
+<msg timestamp="20220704 02:20:54.800" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:54.778" endtime="20220704 02:20:54.800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_FIRST_NAME}</arg>
+<arg>6s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220704 02:20:54.807" level="TRACE">Arguments: [ '//android.widget.EditText[@text="First name"]' | '6s' ]</msg>
+<msg timestamp="20220704 02:20:54.809" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"First name\"]"}</msg>
+<msg timestamp="20220704 02:20:56.110" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220704 02:20:56.111" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:56.317" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"First name\"]"}</msg>
+<msg timestamp="20220704 02:20:57.200" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:57.201" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:57.202" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/258b0bb9-d165-49bc-84b2-fda4e546fe60/displayed {"id": "258b0bb9-d165-49bc-84b2-fda4e546fe60"}</msg>
+<msg timestamp="20220704 02:20:57.263" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/258b0bb9-d165-49bc-84b2-fda4e546fe60/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:57.264" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:57.264" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:54.804" endtime="20220704 02:20:57.264"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_FIRST_NAME}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220704 02:20:57.267" level="TRACE">Arguments: [ '//android.widget.EditText[@text="First name"]' | 'Leslie' ]</msg>
+<msg timestamp="20220704 02:20:57.271" level="INFO">Typing text 'Leslie' into text field '//android.widget.EditText[@text="First name"]'</msg>
+<msg timestamp="20220704 02:20:57.272" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"First name\"]"}</msg>
+<msg timestamp="20220704 02:20:57.599" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:20:57.600" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:57.601" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/b9ffaf31-3f49-4ee6-89c1-063a1ea65496/value {"text": "Leslie", "value": ["L", "e", "s", "l", "i", "e"], "id": "b9ffaf31-3f49-4ee6-89c1-063a1ea65496"}</msg>
+<msg timestamp="20220704 02:20:59.848" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/b9ffaf31-3f49-4ee6-89c1-063a1ea65496/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:20:59.850" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:20:59.851" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:57.265" endtime="20220704 02:20:59.852"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:54.445" endtime="20220704 02:20:59.856"/>
+</test>
+<test id="s1-t7" name="Enter New Contact Last Name" line="43">
+<kw name="Last Name" library="FakerLibrary">
+<var>${lastname}</var>
+<msg timestamp="20220704 02:20:59.930" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220704 02:20:59.932" level="TRACE">Return: 'Strickland'</msg>
+<msg timestamp="20220704 02:20:59.933" level="INFO">${lastname} = Strickland</msg>
+<status status="PASS" starttime="20220704 02:20:59.929" endtime="20220704 02:20:59.933"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220704 02:20:59.937" level="TRACE">Arguments: [ 'Strickland' ]</msg>
+<msg timestamp="20220704 02:20:59.937" level="INFO">Strickland</msg>
+<msg timestamp="20220704 02:20:59.937" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:59.936" endtime="20220704 02:20:59.938"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220704 02:20:59.940" level="TRACE">Arguments: [ '${lastname}' ]</msg>
+<msg timestamp="20220704 02:20:59.942" level="INFO">${lastname} = Strickland</msg>
+<msg timestamp="20220704 02:20:59.942" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:59.939" endtime="20220704 02:20:59.943"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_LAST_NAME}</arg>
+<arg>6s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220704 02:20:59.945" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Last name"]' | '6s' ]</msg>
+<msg timestamp="20220704 02:20:59.946" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Last name\"]"}</msg>
+<msg timestamp="20220704 02:21:01.530" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:21:01.531" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:01.532" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/55205942-700b-46a4-8f97-b8c035f09b4f/displayed {"id": "55205942-700b-46a4-8f97-b8c035f09b4f"}</msg>
+<msg timestamp="20220704 02:21:01.572" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/55205942-700b-46a4-8f97-b8c035f09b4f/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:21:01.573" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:01.573" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:20:59.944" endtime="20220704 02:21:01.573"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_LAST_NAME}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220704 02:21:01.576" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Last name"]' | 'Strickland' ]</msg>
+<msg timestamp="20220704 02:21:01.580" level="INFO">Typing text 'Strickland' into text field '//android.widget.EditText[@text="Last name"]'</msg>
+<msg timestamp="20220704 02:21:01.581" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Last name\"]"}</msg>
+<msg timestamp="20220704 02:21:01.699" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:21:01.700" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:01.701" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/089afebd-2928-4463-b2a4-56fea8feb1e6/value {"text": "Strickland", "value": ["S", "t", "r", "i", "c", "k", "l", "a", "n", "d"], "id": "089afebd-2928-4463-b2a4-56fea8feb1e6"}</msg>
+<msg timestamp="20220704 02:21:02.370" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/089afebd-2928-4463-b2a4-56fea8feb1e6/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:21:02.371" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:02.372" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:21:01.576" endtime="20220704 02:21:02.373"/>
+</kw>
+<status status="PASS" starttime="20220704 02:20:59.878" endtime="20220704 02:21:02.383"/>
+</test>
+<test id="s1-t8" name="Enter New Contact Phone Number" line="50">
+<kw name="Phone Number" library="FakerLibrary">
+<var>${phonenumber}</var>
+<msg timestamp="20220704 02:21:02.396" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220704 02:21:02.397" level="TRACE">Return: '575.503.8707'</msg>
+<msg timestamp="20220704 02:21:02.398" level="INFO">${phonenumber} = 575.503.8707</msg>
+<status status="PASS" starttime="20220704 02:21:02.395" endtime="20220704 02:21:02.398"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${phonenumber}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220704 02:21:02.401" level="TRACE">Arguments: [ '575.503.8707' ]</msg>
+<msg timestamp="20220704 02:21:02.402" level="INFO">575.503.8707</msg>
+<msg timestamp="20220704 02:21:02.402" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:21:02.399" endtime="20220704 02:21:02.402"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${phonenumber}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220704 02:21:02.427" level="TRACE">Arguments: [ '${phonenumber}' ]</msg>
+<msg timestamp="20220704 02:21:02.428" level="INFO">${phonenumber} = 575.503.8707</msg>
+<msg timestamp="20220704 02:21:02.428" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:21:02.427" endtime="20220704 02:21:02.428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_PHONE_NUMBER}</arg>
+<arg>6s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220704 02:21:02.430" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Phone"]' | '6s' ]</msg>
+<msg timestamp="20220704 02:21:02.431" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Phone\"]"}</msg>
+<msg timestamp="20220704 02:21:03.022" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:21:03.023" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:03.024" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/68ae2db7-e028-40ac-bfcf-baa2fd25a3a8/displayed {"id": "68ae2db7-e028-40ac-bfcf-baa2fd25a3a8"}</msg>
+<msg timestamp="20220704 02:21:03.065" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/68ae2db7-e028-40ac-bfcf-baa2fd25a3a8/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:21:03.066" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:03.066" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:21:02.429" endtime="20220704 02:21:03.066"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${ADD_NEW_CONTACT_PHONE_NUMBER}</arg>
+<arg>${phonenumber}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220704 02:21:03.069" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Phone"]' | '575.503.8707' ]</msg>
+<msg timestamp="20220704 02:21:03.072" level="INFO">Typing text '575.503.8707' into text field '//android.widget.EditText[@text="Phone"]'</msg>
+<msg timestamp="20220704 02:21:03.073" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Phone\"]"}</msg>
+<msg timestamp="20220704 02:21:03.333" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220704 02:21:03.334" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:03.335" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/653d8bf0-8db5-4cff-94bb-c361de6334cb/value {"text": "575.503.8707", "value": ["5", "7", "5", ".", "5", "0", "3", ".", "8", "7", "0", "7"], "id": "653d8bf0-8db5-4cff-94bb-c361de6334cb"}</msg>
+<msg timestamp="20220704 02:21:03.943" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/element/653d8bf0-8db5-4cff-94bb-c361de6334cb/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220704 02:21:03.944" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:03.944" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220704 02:21:03.068" endtime="20220704 02:21:03.944"/>
+</kw>
+<status status="PASS" starttime="20220704 02:21:02.393" endtime="20220704 02:21:03.946"/>
+</test>
+<test id="s1-t9" name="Select Different Location/Device Attached With The Phone Number" line="57">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${SELECT_DIFFERENT_DEVICE_HANDLER}</arg>
+<arg>6s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220704 02:21:03.955" level="TRACE">Arguments: [ 'GetText //android.widget.Spinner[@clickable="true"] index=1' | '6s' ]</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220704 02:21:03.957" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220704 02:21:03.963" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/screenshot {}</msg>
+<msg timestamp="20220704 02:21:05.325" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/2f7e09af-5888-46a6-ac2c-60c7815c5685/screenshot HTTP/1.1" 200 208146</msg>
+<msg timestamp="20220704 02:21:05.328" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220704 02:21:05.333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220704 02:21:05.333" level="TRACE">Return: 'C:\\Users\\cepha\\PycharmProjects\\VirtaGlobal_Test\\Output\\appium-screenshot-1.png'</msg>
+<status status="PASS" starttime="20220704 02:21:03.956" endtime="20220704 02:21:05.333"/>
+</kw>
+<msg timestamp="20220704 02:21:05.336" level="FAIL">ValueError: Element locator with prefix 'gettext //android.widget.spinner[@clickable' is not supported</msg>
+<msg timestamp="20220704 02:21:05.399" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 28, in wait_until_element_is_visible
+    self._wait_until_no_error(timeout, check_visibility)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 128, in _wait_until_no_error
+    timeout_error = wait_func(*args)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 21, in check_visibility
+    visible = self._is_visible(locator)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\_element.py", line 624, in _is_visible
+    element = self._element_find(locator, True, False)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\keywords\_element.py", line 574, in _element_find
+    elements = self._element_finder.find(application, _locator, tag)
+  File "C:\Users\cepha\PycharmProjects\VirtaGlobal_Test\venv\lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 34, in find
+    raise ValueError("Element locator with prefix '" + prefix + "' is not supported")
+ValueError: Element locator with prefix 'gettext //android.widget.spinner[@clickable' is not supported</msg>
+<status status="FAIL" starttime="20220704 02:21:03.954" endtime="20220704 02:21:05.399"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SELECT_DIFFERENT_DEVICE_HANDLER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220704 02:21:05.401" endtime="20220704 02:21:05.401"/>
+</kw>
+<status status="FAIL" starttime="20220704 02:21:03.950" endtime="20220704 02:21:05.403">ValueError: Element locator with prefix 'gettext //android.widget.spinner[@clickable' is not supported</status>
+</test>
+<doc>User Should Be Able To Add New Contact</doc>
+<status status="FAIL" starttime="20220704 02:19:36.460" endtime="20220704 02:21:05.408"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="1" skip="0" id="s1" name="AddUsers">AddUsers</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
